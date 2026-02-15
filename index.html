@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Haven • From Day Care to Charity</title>
+  <!-- Font Awesome 6 + Google Fonts for luxe feel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & LUXURIOUS VARIABLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #fff9f7;
+      --rose-gold: #e8b4b8;
+      --dusty-rose: #dcaeb3;
+      --blush: #f8e0e0;
+      --deep-forest: #1b3b1b;
+      --gold: #d4af37;
+      --champagne: #f7e7ce;
+      --pearl: #f5f0f0;
+      --charcoal: #2a2a2a;
+      --white-soft: #fffdfa;
+      --shadow-lux: 0 25px 50px -12px rgba(0,0,0,0.15), 0 10px 20px -5px rgba(0,0,0,0.05);
+      --shadow-gold: 0 15px 30px -10px rgba(180, 145, 70, 0.3);
+      --border-radius-card: 40px;
+      --border-radius-btn: 60px;
+      --font-main: 'Quicksand', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== LUXURY TEXT STYLES ===== */
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--deep-forest);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      font-family: var(--font-display);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--rose-gold), var(--gold));
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .section-title-center {
+      display: block;
+      text-align: center;
+    }
+
+    .section-title-center::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* ===== LUXURY BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--rose-gold), var(--dusty-rose));
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2.8rem;
+      border-radius: var(--border-radius-btn);
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 15px 25px -8px rgba(216, 142, 158, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.5px;
+    }
+
+    .btn i {
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #dcb0b6, #c99ca2);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 25px 35px -8px rgba(180, 120, 130, 0.6);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--deep-forest);
+      color: var(--deep-forest);
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--deep-forest);
+      color: var(--cream);
+      border-color: var(--deep-forest);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #c9a227);
+    }
+
+    /* ===== HEADER (GLASSMORPHISM LUXE) ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 249, 247, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--deep-forest);
+      font-family: var(--font-display);
+    }
+
+    .logo i {
+      color: var(--gold);
+      font-size: 2.3rem;
+      filter: drop-shadow(0 4px 8px #d4af3780);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--deep-forest);
+      font-size: 1.1rem;
+      transition: 0.2s;
+      border-bottom: 3px solid transparent;
+      padding-bottom: 6px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--gold);
+      color: var(--dusty-rose);
+    }
+
+    .donate-nav-btn {
+      background: var(--deep-forest);
+      color: white !important;
+      padding: 0.6rem 1.8rem;
+      border-radius: 40px;
+      border: 2px solid var(--gold);
+    }
+
+    .donate-nav-btn:hover {
+      background: #2d4f2d;
+      border-bottom-color: transparent !important;
+    }
+
+    .instagram-nav-link {
+      background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent !important;
+      font-size: 1.6rem !important;
+      padding: 0 !important;
+      transition: transform 0.3s;
+    }
+
+    .instagram-nav-link:hover {
+      transform: scale(1.2) rotate(5deg);
+      border-bottom: none !important;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: radial-gradient(circle at 10% 30%, #fff4ed, #fae9e6);
+      border-radius: 0 0 80px 80px;
+      margin: 0 1rem;
+      box-shadow: var(--shadow-lux);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "🐾✨🐾✨🐾";
+      font-size: 16rem;
+      position: absolute;
+      bottom: -60px;
+      right: -50px;
+      opacity: 0.06;
+      transform: rotate(-8deg);
+      pointer-events: none;
+      color: var(--deep-forest);
+    }
+
+    .hero .container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 3rem 3rem 4rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      flex: 1 1 350px;
+    }
+
+    .hero-text h1 {
+      font-size: 4.2rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      line-height: 1.1;
+      color: var(--deep-forest);
+    }
+
+    .hero-highlight {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 2rem;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      margin: 2rem 0 2.5rem;
+      color: #3b3b3b;
+      max-width: 550px;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-image i {
+      font-size: 18rem;
+      color: var(--deep-forest);
+      filter: drop-shadow(15px 25px 20px rgba(0,0,0,0.15));
+      animation: float 7s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* ===== LOCATION BADGE (subtle) ===== */
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow-lux);
+      margin: 1rem 0;
+      border: 2px solid var(--gold);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .location-badge i {
+      color: var(--gold);
+    }
+
+    /* ===== TRANSITION STORY SECTION ===== */
+    .transition-section {
+      background: linear-gradient(135deg, #fff5f0, #fceae3);
+      border-radius: 80px;
+      padding: 4rem 3rem;
+      margin: 3rem 0;
+      border: 3px solid var(--gold);
+      box-shadow: var(--shadow-lux);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .transition-section::before {
+      content: "🐾➡️❤️";
+      font-size: 12rem;
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      opacity: 0.08;
+      transform: rotate(-5deg);
+    }
+
+    .transition-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .transition-text {
+      flex: 2 1 400px;
+    }
+
+    .transition-text h2 {
+      font-size: 3rem;
+      font-family: var(--font-display);
+      color: var(--deep-forest);
+      margin-bottom: 1.5rem;
+    }
+
+    .transition-text h2 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .transition-text .highlight {
+      background: rgba(212, 175, 55, 0.15);
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      border: 2px dashed var(--gold);
+    }
+
+    .transition-text p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #3b3b3b;
+    }
+
+    .transition-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: var(--font-display);
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--deep-forest);
+    }
+
+    .transition-image {
+      flex: 1 1 250px;
+      text-align: center;
+    }
+
+    .transition-image i {
+      font-size: 12rem;
+      color: var(--gold);
+      opacity: 0.8;
+      filter: drop-shadow(10px 15px 15px rgba(0,0,0,0.1));
+      animation: gentlePulse 5s ease-in-out infinite;
+    }
+
+    @keyframes gentlePulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== MISSION CARD ===== */
+    .mission-card {
+      background: var(--white-soft);
+      border-radius: 60px 60px 30px 30px;
+      padding: 3rem;
+      margin: -3rem auto 3rem;
+      max-width: 1000px;
+      box-shadow: var(--shadow-lux);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .mission-card i {
+      font-size: 4rem;
+      background: linear-gradient(145deg, var(--gold), var(--rose-gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .mission-card h2 {
+      font-size: 2.5rem;
+      color: var(--deep-forest);
+      font-family: var(--font-display);
+      margin-bottom: 1rem;
+    }
+
+    .ig-bio-badge {
+      display: inline-block;
+      background: linear-gradient(145deg, #fff5f0, #ffeae5);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--deep-forest);
+      margin-top: 1.5rem;
+      border: 2px dashed var(--gold);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+    }
+
+    /* ===== IMPACT COUNTER ===== */
+    .impact-section {
+      background: linear-gradient(135deg, #1b3b1b, #2d5a2d);
+      border-radius: 70px;
+      padding: 4rem 3rem;
+      margin: 3rem 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lux);
+    }
+
+    .impact-section::before {
+      content: "🐾✨";
+      font-size: 15rem;
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      opacity: 0.1;
+      transform: rotate(15deg);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .impact-item {
+      padding: 2rem 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .impact-item:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+    }
+
+    .impact-number {
+      font-size: 3.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+      font-family: var(--font-display);
+      text-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .impact-label {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .impact-item i {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--champagne);
+    }
+
+    /* ===== PROGRAMS ===== */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .program-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 40px;
+      box-shadow: var(--shadow-lux);
+      transition: all 0.4s;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-card::after {
+      content: "✨";
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      font-size: 5rem;
+      opacity: 0.1;
+      transform: rotate(15deg);
+    }
+
+    .program-card:hover {
+      transform: translateY(-12px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .program-card i {
+      font-size: 3.2rem;
+      background: linear-gradient(145deg, var(--deep-forest), #3f6840);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.2rem;
+    }
+
+    .program-card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--deep-forest);
+      font-family: var(--font-display);
+    }
+
+    /* ===== VOLUNTEER LUXURY (with UNIQUE logo designs) ===== */
+    .volunteer-section {
+      background: linear-gradient(135deg, #fef3e7, #fae9de);
+      border-radius: 70px;
+      padding: 4rem 3rem;
+      margin: 4rem 0;
+      border: 2px dashed var(--gold);
+      box-shadow: var(--shadow-lux);
+    }
+
+    .volunteer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .volunteer-option {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem 2rem;
+      border-radius: 50px;
+      text-align: center;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .volunteer-option:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lux);
+      border-color: var(--gold);
+    }
+
+    /* UNIQUE logo styles for each volunteer role */
+    .volunteer-logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+      border-radius: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      border: 3px solid white;
+      transition: 0.3s;
+    }
+
+    .volunteer-option:hover .volunteer-logo {
+      transform: rotate(5deg) scale(1.05);
+    }
+
+    .volunteer-logo i {
+      font-size: 4rem;
+      filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.1));
+    }
+
+    /* Dog Walker - using dog logo (fa-dog) */
+    .dog-walker-logo {
+      background: linear-gradient(135deg, #4a90e2, #7dcfb6);
+    }
+    .dog-walker-logo i {
+      color: white;
+    }
+
+    /* Cat Cuddler - warm pink/purple theme */
+    .cat-cuddler-logo {
+      background: linear-gradient(135deg, #f8a5c2, #a8a4e6);
+    }
+    .cat-cuddler-logo i {
+      color: white;
+    }
+
+    /* Transport Hero - energetic orange/red theme */
+    .transport-logo {
+      background: linear-gradient(135deg, #f9d56e, #f8a488);
+    }
+    .transport-logo i {
+      color: white;
+    }
+
+    /* Social Media - vibrant purple/pink theme */
+    .social-logo {
+      background: linear-gradient(135deg, #c06c84, #6c5b7b);
+    }
+    .social-logo i {
+      color: white;
+    }
+
+    .volunteer-option h4 {
+      font-size: 1.5rem;
+      color: var(--deep-forest);
+      margin-bottom: 0.8rem;
+    }
+
+    .volunteer-option p {
+      color: #5f6b5f;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== WISHLIST LUXURY (with ENLARGED logo designs) ===== */
+    .wishlist-section {
+      background: white;
+      border-radius: 70px;
+      padding: 3rem;
+      margin: 3rem 0;
+      box-shadow: var(--shadow-lux);
+      border: 2px solid var(--champagne);
+    }
+
+    .wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .wishlist-item {
+      background: linear-gradient(135deg, #fff9f7, #fff0ed);
+      padding: 2.5rem 2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .wishlist-item:hover {
+      border-color: var(--gold);
+      transform: scale(1.02);
+      box-shadow: var(--shadow-gold);
+    }
+
+    /* ENLARGED logo styles for wishlist items */
+    .wishlist-logo {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 2rem;
+      border-radius: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+      border: 4px solid white;
+      transition: 0.3s;
+    }
+
+    .wishlist-item:hover .wishlist-logo {
+      transform: rotate(5deg) scale(1.05);
+    }
+
+    .wishlist-logo i {
+      font-size: 5.5rem;
+    }
+
+    /* Premium Dog Food - rich burgundy/gold theme - ENLARGED */
+    .dogfood-logo {
+      background: linear-gradient(145deg, #8b4513, #c96f0d);
+      position: relative;
+    }
+    .dogfood-logo i {
+      color: #ffd966;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      font-size: 6rem;
+    }
+    .dogfood-logo::after {
+      content: "🍖";
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      font-size: 3.5rem;
+      opacity: 0.6;
+      transform: rotate(-10deg);
+    }
+
+    /* Luxury Towels - proper towel logo (fa-bath) */
+    .towel-logo {
+      background: linear-gradient(145deg, #b5d3e7, #e6c8a0);
+    }
+    .towel-logo i {
+      color: #5d7a8c;
+      font-size: 6rem;
+    }
+    .towel-logo::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 2.2rem;
+      opacity: 0.6;
+    }
+
+    /* Pet Beds - cozy purple/blue theme */
+    .bed-logo {
+      background: linear-gradient(145deg, #9b9bff, #d4b8ff);
+    }
+    .bed-logo i {
+      color: white;
+      font-size: 6rem;
+    }
+
+    /* Vaccines - medical teal/blue theme */
+    .vaccine-logo {
+      background: linear-gradient(145deg, #64b5f6, #4db6ac);
+    }
+    .vaccine-logo i {
+      color: white;
+      font-size: 6rem;
+    }
+
+    .wishlist-info h4 {
+      font-size: 1.4rem;
+      color: var(--deep-forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .wishlist-info p {
+      color: #5f6b5f;
+      font-size: 1rem;
+    }
+
+    .urgency-badge {
+      background: linear-gradient(135deg, #ff6b6b, #ff8c8c);
+      color: white;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== EVENTS LUXURY ===== */
+    .events-section {
+      margin: 4rem 0;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 50px;
+      padding: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      box-shadow: var(--shadow-lux);
+      border: 1px solid var(--champagne);
+      transition: 0.3s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .event-date {
+      text-align: center;
+      min-width: 80px;
+      background: linear-gradient(135deg, var(--deep-forest), #2d5a2d);
+      padding: 1rem 0.5rem;
+      border-radius: 30px;
+      color: white;
+    }
+
+    .event-date .day {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold);
+    }
+
+    .event-date .month {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .event-details h4 {
+      font-size: 1.3rem;
+      color: var(--deep-forest);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== INSTAGRAM SHOWCASE ===== */
+    .instagram-showcase {
+      background: linear-gradient(135deg, #fff5f0, #ffeae5);
+      border-radius: 70px;
+      padding: 3rem;
+      margin: 4rem 0;
+      border: 3px dashed var(--gold);
+      text-align: center;
+    }
+
+    .instagram-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .instagram-header i {
+      font-size: 4rem;
+      background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .instagram-header h3 {
+      font-size: 3rem;
+      color: var(--deep-forest);
+      font-family: var(--font-display);
+    }
+
+    .ig-bio {
+      font-size: 1.8rem;
+      background: rgba(255,255,255,0.8);
+      padding: 1.2rem 2.5rem;
+      border-radius: 80px;
+      display: inline-block;
+      margin: 1.5rem 0;
+      border: 2px solid var(--gold);
+      font-weight: 600;
+      backdrop-filter: blur(5px);
+    }
+
+    /* ===== NEWSLETTER LUXURY ===== */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--deep-forest), #2d5a2d);
+      border-radius: 70px;
+      padding: 4rem;
+      margin: 3rem 0;
+      color: white;
+      text-align: center;
+      box-shadow: var(--shadow-lux);
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 600px;
+      margin: 2.5rem auto 0;
+      gap: 1rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 1.2rem 2rem;
+      border: none;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      outline: none;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--gold);
+    }
+
+    .newsletter-form button {
+      background: var(--gold);
+      color: var(--deep-forest);
+      border: none;
+      padding: 0 3rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 2px solid var(--gold);
+    }
+
+    .newsletter-form button:hover {
+      background: #c9a227;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    /* ===== DONATION SECTION ===== */
+    .donation-options {
+      background: white;
+      border-radius: 80px;
+      padding: 3rem;
+      box-shadow: var(--shadow-lux);
+      text-align: center;
+      margin: 3rem 0;
+      border: 2px solid var(--champagne);
+    }
+
+    .toggle-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+    }
+
+    .donate-amount-btn {
+      background: #f5f0f0;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+      color: var(--deep-forest);
+      border: 2px solid transparent;
+      font-family: var(--font-display);
+    }
+
+    .donate-amount-btn.active {
+      background: linear-gradient(135deg, var(--deep-forest), #2d5a2d);
+      color: white;
+      border-color: var(--gold);
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    #selected-display {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--deep-forest);
+      background: linear-gradient(135deg, #f8f0f0, #f5e8e8);
+      display: inline-block;
+      padding: 0.8rem 3.5rem;
+      border-radius: 80px;
+      margin: 1rem 0;
+      border: 2px solid var(--gold);
+    }
+
+    /* ===== FOOTER LUXURY ===== */
+    footer {
+      background: #1b2f1b;
+      color: #f0e6d8;
+      margin-top: 5rem;
+      padding: 4rem 2rem 2rem;
+      border-radius: 80px 80px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    footer h4 {
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-display);
+    }
+
+    footer a {
+      color: #f0e6d8;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .social-icons i {
+      font-size: 2rem;
+      margin-right: 1.5rem;
+      color: var(--gold);
+      transition: 0.2s;
+    }
+
+    .social-icons i:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 3rem;
+      font-size: 1rem;
+      color: #a8b9a8;
+    }
+
+    /* ===== MODAL LUXURY ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 70px;
+      max-width: 550px;
+      width: 90%;
+      border: 3px solid var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-paw"></i>
+        <span>Paw Haven</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#donate" class="donate-nav-btn">Donate</a></li>
+        <li><a href="https://www.instagram.com/haven_for_paws?igsh=MTlvaHE4ZmVjMnZibQ==" target="_blank" class="instagram-nav-link" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="mission">
+      <div class="container">
+        <div class="hero-text">
+          <span class="hero-highlight"><i class="fas fa-heart"></i> 🐾 Cozy shelter • rescue & love</span>
+          <h1>Luxury care <br>for <span style="color: var(--gold);">every paw</span></h1>
+          <p>We rescue, rehabilitate, and rehome abandoned animals with five-star love and warmth. Every animal deserves a royal haven.</p>
+          <!-- subtle location badge - only here -->
+          <div class="location-badge">
+            <i class="fas fa-map-pin"></i> Based in Karachi • Serving since 2026
+          </div>
+          <div style="margin-top: 2rem;">
+            <a href="#donate" class="btn"><i class="fas fa-hand-holding-heart"></i> Sponsor a pet</a>
+            <a href="#volunteer" class="btn btn-outline" style="margin-left: 1rem;"><i class="fas fa-hands"></i> Volunteer</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <i class="fas fa-cat"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW TRANSITION SECTION: From Day Care to Charity -->
+    <div class="container">
+      <div class="transition-section">
+        <div class="transition-content">
+          <div class="transition-text">
+            <div class="highlight">🌟 Our Journey of Compassion 🌟</div>
+            <h2>From <span>Paw Day Care</span> to <br>Luxury Animal Charity</h2>
+            <p>What started as a premium pet day care service in Karachi has blossomed into something bigger. We first offered loving day care for pets — a place where tails wagged and cats purred in comfort. Now, we're extending our mission to rescue, rehabilitate, and rehome abandoned animals across the city.</p>
+            <p>Our day care roots remain strong: we still believe in five-star care, but now we provide it to those who need it most — the strays, the injured, the forgotten.</p>
+            <div class="transition-stats">
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Happy Day Care Pets</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">2026</div>
+                <div class="stat-label">Founded as Charity</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">2026</div>
+                <div class="stat-label">Day Care Roots</div>
+              </div>
+            </div>
+          </div>
+          <div class="transition-image">
+            <i class="fas fa-paw"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Card with Instagram Bio -->
+    <div class="container">
+      <div class="mission-card">
+        <i class="fas fa-feather"></i>
+        <h2>Our Royal Mission</h2>
+        <p>Since 2026, Paw Haven has been a premier luxury pet care provider, evolving into a full-fledged animal charity. We provide medical care, foster networks, and adoption concierge services — because every animal deserves to be treated like royalty.</p>
+        <div class="ig-bio-badge">
+          <i class="fab fa-instagram" style="color: #dd2a7b;"></i> 
+          @haven_for_paws: "From day care to charity — same love, bigger mission"
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Counter -->
+    <section id="impact" class="container">
+      <div class="impact-section">
+        <h2 class="section-title-center" style="color: white; border-left: none;">Our Impact 🌟</h2>
+        <div class="impact-grid">
+          <div class="impact-item">
+            <i class="fas fa-paw"></i>
+            <div class="impact-number" id="rescued-count">247+</div>
+            <div class="impact-label">Animals Rescued</div>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-home"></i>
+            <div class="impact-number" id="adopted-count">192+</div>
+            <div class="impact-label">Forever Homes</div>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-heartbeat"></i>
+            <div class="impact-number" id="vet-count">556+</div>
+            <div class="impact-label">Vet Treatments</div>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-users"></i>
+            <div class="impact-number" id="foster-count">56+</div>
+            <div class="impact-label">Foster Families</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section (Charity Programs) -->
+    <section id="programs" class="container">
+      <h2 class="section-title">Our Charity Programs 👑</h2>
+      <div class="program-grid">
+        <article class="program-card">
+          <i class="fas fa-dog"></i>
+          <h3>Adoptables</h3>
+          <p>Meet our adoptable stars — each one ready for a forever palace.</p>
+        </article>
+        <article class="program-card">
+          <i class="fas fa-home"></i>
+          <h3>Foster Diaries</h3>
+          <p>Luxury foster stories from our community.</p>
+        </article>
+        <article class="program-card">
+          <i class="fas fa-tree"></i>
+          <h3>Royal Rescue</h3>
+          <p>24/7 emergency rescue services.</p>
+        </article>
+        <article class="program-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Concierge Adoption</h3>
+          <p>We match pets with loving homes like fine jewelry.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Volunteer Section with UNIQUE Logos -->
+    <section id="volunteer" class="container">
+      <div class="volunteer-section">
+        <h2 class="section-title-center" style="color: var(--deep-forest);">Volunteer With Us 🤝</h2>
+        <p style="text-align: center; font-size: 1.3rem;">Join our royal family of volunteers</p>
+        
+        <div class="volunteer-grid">
+          <!-- Dog Walker with DOG LOGO (fa-dog) -->
+          <div class="volunteer-option">
+            <div class="volunteer-logo dog-walker-logo">
+              <i class="fas fa-dog"></i>
+            </div>
+            <h4>Dog Walker</h4>
+            <p>Help our pups get exercise and enjoy beach walks</p>
+            <button class="btn btn-small btn-outline" onclick="openVolunteerModal('Dog Walker')">Sign Up</button>
+          </div>
+          
+          <!-- Cat Cuddler with UNIQUE logo -->
+          <div class="volunteer-option">
+            <div class="volunteer-logo cat-cuddler-logo">
+              <i class="fas fa-cat"></i>
+            </div>
+            <h4>Cat Cuddler</h4>
+            <p>Socialize our feline friends with love</p>
+            <button class="btn btn-small btn-outline" onclick="openVolunteerModal('Cat Cuddler')">Sign Up</button>
+          </div>
+          
+          <!-- Transport Hero with UNIQUE logo -->
+          <div class="volunteer-option">
+            <div class="volunteer-logo transport-logo">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h4>Transport Hero</h4>
+            <p>Help transport animals to safety</p>
+            <button class="btn btn-small btn-outline" onclick="openVolunteerModal('Transport Driver')">Sign Up</button>
+          </div>
+          
+          <!-- Social Media with UNIQUE logo -->
+          <div class="volunteer-option">
+            <div class="volunteer-logo social-logo">
+              <i class="fas fa-camera"></i>
+            </div>
+            <h4>Social Media</h4>
+            <p>Capture stories for @haven_for_paws</p>
+            <button class="btn btn-small btn-outline" onclick="openVolunteerModal('Social Media')">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wishlist with ENLARGED UNIQUE Logos -->
+    <section class="container">
+      <div class="wishlist-section">
+        <h2 class="section-title">Our Wishlist 🎁</h2>
+        <div class="wishlist-grid">
+          <!-- Premium Dog Food with ENLARGED logo -->
+          <div class="wishlist-item">
+            <div class="wishlist-logo dogfood-logo">
+              <i class="fas fa-bowl-food"></i>
+            </div>
+            <div class="wishlist-info">
+              <h4>Premium Dog Food <span class="urgency-badge">Urgent</span></h4>
+              <p>Royal Canin preferred • 50+ bags needed</p>
+            </div>
+          </div>
+          
+          <!-- Luxury Towels with PROPER TOWEL LOGO (fa-bath) -->
+          <div class="wishlist-item">
+            <div class="wishlist-logo towel-logo">
+              <i class="fas fa-bath"></i>
+            </div>
+            <div class="wishlist-info">
+              <h4>Luxury Towels</h4>
+              <p>Soft, plush • Any colors welcome</p>
+            </div>
+          </div>
+          
+          <!-- Pet Beds with UNIQUE logo -->
+          <div class="wishlist-item">
+            <div class="wishlist-logo bed-logo">
+              <i class="fas fa-bed"></i>
+            </div>
+            <div class="wishlist-info">
+              <h4>Luxury Pet Beds</h4>
+              <p>Orthopedic • All sizes needed</p>
+            </div>
+          </div>
+          
+          <!-- Vaccines with UNIQUE logo -->
+          <div class="wishlist-item">
+            <div class="wishlist-logo vaccine-logo">
+              <i class="fas fa-syringe"></i>
+            </div>
+            <div class="wishlist-info">
+              <h4>Vaccines</h4>
+              <p>For our rescue center • Any help appreciated</p>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <a href="#" class="btn btn-gold"><i class="fas fa-truck"></i> Donate Items</a>
+          <p style="margin-top: 1rem;">Drop-off: DHA, Karachi • Daily 9am-8pm</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="container events-section">
+      <h2 class="section-title">Upcoming Events 📅</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-date">
+            <div class="day">20</div>
+            <div class="month">MAR</div>
+          </div>
+          <div class="event-details">
+            <h4>Adoption Day</h4>
+            <p><i class="fas fa-map-pin"></i> Clifton Beach</p>
+            <p><i class="fas fa-clock"></i> 10am - 5pm</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date">
+            <div class="day">27</div>
+            <div class="month">MAR</div>
+          </div>
+          <div class="event-details">
+            <h4>Luxury Gala Fundraiser</h4>
+            <p><i class="fas fa-map-pin"></i> DHA Golf Club</p>
+            <p><i class="fas fa-clock"></i> 7pm - midnight</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date">
+            <div class="day">05</div>
+            <div class="month">APR</div>
+          </div>
+          <div class="event-details">
+            <h4>Foster Info Session</h4>
+            <p><i class="fas fa-map-pin"></i> Zoom + In-person</p>
+            <p><i class="fas fa-clock"></i> 6pm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Showcase -->
+    <div class="container">
+      <div class="instagram-showcase">
+        <div class="instagram-header">
+          <i class="fab fa-instagram"></i>
+          <h3>@haven_for_paws</h3>
+        </div>
+        <div class="ig-bio">
+          🐾 From day care to charity • same love, bigger mission
+        </div>
+        <a href="https://www.instagram.com/haven_for_paws?igsh=MTlvaHE4ZmVjMnZibQ==" target="_blank" class="btn btn-gold" style="margin-top: 1rem;">
+          <i class="fab fa-instagram"></i> Visit Our Instagram
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="container">
+      <div class="newsletter-section">
+        <h2 style="font-size: 2.5rem;">Royal Updates ✨</h2>
+        <p style="font-size: 1.3rem;">Get success stories & event invites</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit"><i class="fas fa-paw"></i> Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Donation Section (Core Charity Requirement) -->
+    <section id="donate" class="container">
+      <h2 class="section-title">Ways to Donate</h2>
+      <div class="donation-options">
+        <h3 style="font-size: 2.5rem; color: var(--deep-forest);">Give Royalty</h3>
+        <div class="toggle-buttons" id="amount-buttons">
+          <button class="donate-amount-btn active" data-amount="25">$25</button>
+          <button class="donate-amount-btn" data-amount="50">$50</button>
+          <button class="donate-amount-btn" data-amount="100">$100</button>
+          <button class="donate-amount-btn" data-amount="other">✨ Custom</button>
+        </div>
+        <div id="selected-display">$25</div>
+        <p style="font-size: 1.2rem;">covers luxury vaccines for one puppy 🐶</p>
+        <div class="action-buttons">
+          <button class="btn" id="donate-once"><i class="fas fa-credit-card"></i> Donate Once</button>
+          <button class="btn btn-outline" id="donate-monthly"><i class="fas fa-calendar-alt"></i> Monthly</button>
+        </div>
+        <p class="fine-print" style="margin-top: 2rem; font-size: 0.9rem; color: #666;"><i class="fas fa-lock"></i> 100% secure • tax-deductible • proceeds go directly to our rescue programs</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Paw Haven</h4>
+        <p><i class="fas fa-map-pin"></i> DHA Phase 6, Karachi</p>
+        <p><i class="fas fa-phone-alt"></i> +92 300 1234567</p>
+        <p><i class="fas fa-envelope"></i> hello@pawhaven.pk</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#">Wishlist</a></li>
+          <li><a href="#">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/haven_for_paws?igsh=MTlvaHE4ZmVjMnZibQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Paw Haven — From day care to charity • same love, bigger mission 🐾
+    </div>
+  </footer>
+
+  <!-- Volunteer Modal -->
+  <div class="modal" id="volunteerModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Volunteer Application</h3>
+        <span class="close-modal" onclick="closeVolunteerModal()">&times;</span>
+      </div>
+      <form id="volunteerForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" required>
+        </div>
+        <div class="form-group">
+          <label>Interested Role</label>
+          <select id="volunteerRoleSelect">
+            <option>Dog Walker</option>
+            <option>Cat Cuddler</option>
+            <option>Transport Hero</option>
+            <option>Social Media</option>
+          </select>
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Donation interaction
+    (function() {
+      const amountBtns = document.querySelectorAll('.donate-amount-btn');
+      const displayDiv = document.getElementById('selected-display');
+      const onceBtn = document.getElementById('donate-once');
+      const monthlyBtn = document.getElementById('donate-monthly');
+      
+      let currentAmount = '25';
+      
+      function setActiveAmount(amountValue, buttonElement) {
+        amountBtns.forEach(btn => btn.classList.remove('active'));
+        if (buttonElement) buttonElement.classList.add('active');
+        else amountBtns.forEach(btn => { if (btn.dataset.amount === amountValue) btn.classList.add('active'); });
+        
+        if (amountValue === 'other') {
+          displayDiv.textContent = '✨ Custom amount';
+          currentAmount = 'other';
+        } else {
+          displayDiv.textContent = '$' + amountValue;
+          currentAmount = amountValue;
+        }
+      }
+      
+      amountBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          setActiveAmount(this.dataset.amount, this);
+        });
+      });
+      
+      function handleDonationClick(plan) {
+        let msg = currentAmount === 'other' 
+          ? `Thank you for considering a ${plan} donation. You'll be redirected to our secure payment page. 🐾 From @haven_for_paws — from day care to charity!`
+          : `🙏 You chose to donate $${currentAmount} ${plan}. Thank you for supporting our journey from day care to charity! Follow us @haven_for_paws ✨`;
+        alert(msg);
+      }
+      
+      onceBtn.addEventListener('click', () => handleDonationClick('once'));
+      monthlyBtn.addEventListener('click', () => handleDonationClick('monthly'));
+
+      // Set initial display
+      const defaultActive = document.querySelector('.donate-amount-btn.active');
+      if (defaultActive) {
+        const defaultAmount = defaultActive.dataset.amount;
+        if (defaultAmount !== 'other') {
+          displayDiv.textContent = '$' + defaultAmount;
+          currentAmount = defaultAmount;
+        } else {
+          displayDiv.textContent = '✨ Custom amount';
+          currentAmount = 'other';
+        }
+      }
+    })();
+
+    // Volunteer Modal Functions
+    function openVolunteerModal(role) {
+      document.getElementById('volunteerModal').classList.add('active');
+      document.getElementById('volunteerRoleSelect').value = role;
+    }
+    
+    function closeVolunteerModal() {
+      document.getElementById('volunteerModal').classList.remove('active');
+    }
+    
+    window.addEventListener('click', function(e) {
+      if (e.target === document.getElementById('volunteerModal')) closeVolunteerModal();
+    });
+    
+    document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for applying! We\'ll contact you soon at @haven_for_paws 🐾 — from day care to charity, we need you!');
+      closeVolunteerModal();
+    });
+    
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thanks for subscribing! Follow our journey from day care to charity @haven_for_paws 🍂');
+      this.reset();
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === "#") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
